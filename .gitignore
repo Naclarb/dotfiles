@@ -1,0 +1,17 @@
+# Backup files created by install.sh
+*.bak
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# Editor undo files
+*.un~
+
+# Local environment files
+.env_secret
