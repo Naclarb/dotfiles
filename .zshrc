@@ -76,6 +76,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 
+
 # =============================================================================
 # 7. Powerlevel10k theme
 # =============================================================================
@@ -87,6 +88,10 @@ source ~/.zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 # zsh-syntax-highlighting MUST be loaded LAST (it wraps ZLE widgets)
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# =============================================================================
+# 8. Additional configuration
+# =============================================================================
+
 # 自动启动 ssh-agent 并添加私钥
 if [ -z "$SSH_AUTH_SOCK" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)" > /dev/null
@@ -96,3 +101,6 @@ fi
 if ! ssh-add -l | grep -q "id_ed25519"; then
     ssh-add ~/.ssh/id_ed25519 2>/dev/null
 fi
+
+# 启用 vi 模式
+bindkey -v
