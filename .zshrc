@@ -92,15 +92,5 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # 8. Additional configuration
 # =============================================================================
 
-# 自动启动 ssh-agent 并添加私钥
-if [ -z "$SSH_AUTH_SOCK" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
-    eval "$(ssh-agent -s)" > /dev/null
-fi
-
-# 检查并添加 id_ed25519 私钥
-if ! ssh-add -l | grep -q "id_ed25519"; then
-    ssh-add ~/.ssh/id_ed25519 2>/dev/null
-fi
-
 # 启用 vi 模式
 bindkey -v
