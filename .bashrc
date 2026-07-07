@@ -137,3 +137,12 @@ export BAT_THEME="GitHub"
 export PATH="$HOME/.local/bin:$PATH"
 export BROWSER=wslview
 alias fd='fdfind'
+# 自动启动 ssh-agent 并添加私钥
+if [ -z "$SSH_AUTH_SOCK" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -s)" > /dev/null
+fi
+
+# 检查并添加 id_ed25519 私钥
+if ! ssh-add -l | grep -q "id_ed25519"; then
+    ssh-add ~/.ssh/id_ed25519 2>/dev/null
+fi
