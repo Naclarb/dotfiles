@@ -66,6 +66,8 @@ eval "$(zoxide init zsh)"
 # =============================================================================
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# Complete my alias command
+source ~/.zsh/plugins/zsh-abbr/zsh-abbr.zsh
 
 # Fix autosuggestion color (use fg=244 for 256-color terminals)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
