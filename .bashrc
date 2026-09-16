@@ -127,11 +127,13 @@ export ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"
 if [ -f ~/.env_secret ]; then
     source ~/.env_secret
 fi
-export ANTHROPIC_MODEL="deepseek-v4-pro"
-export ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-v4-pro"
-export ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-v4-pro"
-export ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-v4-flash"
-export CLAUDE_CODE_SUBAGENT_MODEL="deepseek-v4-flash"
+# DeepSeek 只有 deepseek-flash / deepseek-v4-pro 两个模型 ID
+# 所有别名与子代理统一指向 deepseek-flash，避免有任何路径落到 pro
+export ANTHROPIC_MODEL="deepseek-flash"
+export ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-flash"
+export ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-flash"
+export ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-flash"
+export CLAUDE_CODE_SUBAGENT_MODEL="deepseek-flash"
 export CLAUDE_CODE_EFFORT_LEVEL="max"
 export BAT_THEME="GitHub"
 export PATH="$HOME/.local/bin:$PATH"
