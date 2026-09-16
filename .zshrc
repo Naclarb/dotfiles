@@ -53,7 +53,7 @@ alias fd='fdfind'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias el='eza --git --group-directories-first --icons=auto'
 # =============================================================================
 # 5. Tool initializations
 # =============================================================================
